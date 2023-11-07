@@ -18,12 +18,17 @@ class _CocktailState extends State<Cocktail> {
     fetchCocktails();
   }
 
+// this is the API call, it uses the in built API functionality to generate the random cocktail
   Future<void> fetchCocktails() async {
     final response = await http.get(Uri.parse('https://www.thecocktaildb.com/api/json/v1/1/random.php'));
+    //if statement used to catch any errors
     if (response.statusCode == 200) {
+      //the json is decoded to a format that can be read by the app
       final body = jsonDecode(response.body);
+      //setting the state updates the widgets state, automatically updating the UI 
       setState(() {
-        cocktails = List<String>.from(body['drinks'].map((drink) => drink['strDrink']));
+        cocktails = List<String>.from(body['drinks'].map((drink) => '${drink['strDrink']}: ${drink['strInstructions']}'));
+
       });
     } else {
       throw Exception('Failed to load cocktail');
