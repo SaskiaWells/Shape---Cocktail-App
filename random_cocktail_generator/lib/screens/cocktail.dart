@@ -27,6 +27,7 @@ class _CocktailState extends State<Cocktail> {
       final body = jsonDecode(response.body);
       //setting the state updates the widgets state, automatically updating the UI 
       setState(() {
+        //the cocktails list is populated with the name and instructions for the cocktail
         cocktails = List<String>.from(body['drinks'].map((drink) => '${drink['strDrink']}: ${drink['strInstructions']}'));
 
       });
