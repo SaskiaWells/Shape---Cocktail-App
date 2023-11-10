@@ -11,7 +11,9 @@ class HomePage extends StatelessWidget {
 
         //created app bar to sit on top of page
         appBar: AppBar(
-          title: const Text('Random Cocktail Generator'),
+          centerTitle: true,
+          title: const Text('Random Cocktail Generator', style: TextStyle(color: Colors.white,  fontSize: 30),
+          ),
         ),
 
 
@@ -23,8 +25,9 @@ class HomePage extends StatelessWidget {
                 gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
-                    colors: [Color(0xFF474973), Color(0xFFBB0A21)])),
-            child: Center(
+                    colors: [Color(0xFF161B33), Color(0xFFBB0A21)])),
+            child:
+            Center(
               //column stacks the widgets on top of each other
               child: Column(
                 children: [

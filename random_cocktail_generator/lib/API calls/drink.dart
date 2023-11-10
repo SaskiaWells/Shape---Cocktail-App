@@ -85,19 +85,20 @@ class Drink {
 }
 }
 class DrinkService {
-  Future<List<Drink>> fetchCocktails() async {
+  Future<Drink> fetchCocktails() async {
     final response = await http.get(Uri.parse('https://www.thecocktaildb.com/api/json/v1/1/random.php'));
     if (response.statusCode == 200) {
       final body = jsonDecode(response.body);
       final List<dynamic> drinkList = body['drinks'];
 
-      final List<Drink> drinks = [];
-      for (var i = 0; i < drinkList.length; i++) {
-        final entry = drinkList[i];
-        drinks.add(Drink.fromJSON(entry));
+       if (drinkList.isNotEmpty) {
+        final entry = drinkList[0];
+        return Drink.fromJSON(entry);
+      } else {
+        throw Exception('No drinks found');
       }
 
-      return drinks;
+    
     } else {
       throw Exception('Failed to load cocktail');
     }
