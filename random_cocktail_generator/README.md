@@ -1,16 +1,10 @@
-# random_cocktail_generator
+This is my first project using Flutter, it is a random cocktail generator where a user can shake a cocktail to generate a random cocktail.
 
-A new Flutter project.
+API: https://www.thecocktaildb.com/api.php?ref=apilist.fun
 
-## Getting Started
+To run the project:
 
-This project is a starting point for a Flutter application.
+install all dependancies: npm install
 
-A few resources to get you started if this is your first Flutter project:
+run the project: flutter run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
