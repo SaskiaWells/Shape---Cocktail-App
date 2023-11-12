@@ -1,5 +1,7 @@
 import 'package:http/http.dart' as http;
+import 'package:random_cocktail_generator/screens/cocktail.dart';
 import 'dart:convert';
+import 'package:random_cocktail_generator/screens/home.dart';
 
 class Drink {
 
@@ -85,7 +87,10 @@ class Drink {
 }
 }
 class DrinkService {
+
+
   Future<Drink> fetchCocktails() async {
+
     final response = await http.get(Uri.parse('https://www.thecocktaildb.com/api/json/v1/1/random.php'));
     if (response.statusCode == 200) {
       final body = jsonDecode(response.body);
