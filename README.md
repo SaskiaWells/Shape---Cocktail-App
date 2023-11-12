@@ -2,8 +2,10 @@ This is my first project using Flutter, it is a random cocktail generator where 
 
 API: https://www.thecocktaildb.com/api.php?ref=apilist.fun
 
-To run the project:
+To run the project ensure you have flutter installed on you device:
 
-install all dependancies: npm install
+cd random-cocktail-generator
+
+install all dependancies: flutter pub get
 
 run the project: flutter run
