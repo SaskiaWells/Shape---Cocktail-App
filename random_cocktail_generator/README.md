@@ -4,7 +4,7 @@ API: https://www.thecocktaildb.com/api.php?ref=apilist.fun
 
 To run the project:
 
-install all dependancies: npm install
+install all dependancies: flutter pub get
 
 run the project: flutter run
 
